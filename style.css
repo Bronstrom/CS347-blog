@@ -24,3 +24,9 @@ body {
     padding: 1em;
     background-color: lightgray;
 }
+
+.center-image {
+    display: block;
+    margin: auto;
+    width: 50%;
+  }
