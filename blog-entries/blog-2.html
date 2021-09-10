@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Brad Fellstrom's Blog | Blog #2</title>
+    <link rel="icon" href="/images/blog_logo.png">
+    <link rel="stylesheet" href="../style.css">
+    <meta charset="utf-8">
+    <meta name="description" content="Negative Space">
+</head>
+
+<body>
+    <div style="text-align: center">
+        <h1>Week 2 (9/10/21): Negative Space</h1>
+    </div>
+
+    <h3>What is Negative Space?</h3>
+
+    <p>
+        Claimed to be one of the fundamental building blocks to design, "negative space", also commonly known as
+        "white space", is the space provided between elements in a composition. Negative space is a section
+        of a webpage left completely empty, including margins and gutters in the surrounding blank exterior
+        of a page.
+    </p>
+
+    <p>
+        Typically, webpages following the box model exhibit some use of negative space:
+    </p>
+
+    <h3>What does Negative Space Mean to the Viewer?</h3>
+
+    <p> 
+        As a web designer, you may be questioning the importance of negative space. Isn't this empty
+        space a total waste of real estate, where more information, images, or other elements could fit? The point
+        of negative space is to give the viewer some visual breathing room, making it easy on the eyes. Moreover,
+        there is a greater feeling of balance to the webpage. With limited space, the viewer may feel overwhelmed
+        getting loads of information thrown at them all at once on a single screen. In general, content is consumed
+        better vertically.
+    </p>
+
+    <p>
+        While the use of negative space isn't a requirement for building a webpage, it should be a forethought in
+        keeping a designer's audience engaged. This leads us into minimalist web design. Often times "less is
+        more." A user takes about a second or less to form an opinion about a webpage, and if it looks cluttered,
+        it will drive their attention away. The concept of negative space enhances the user experience of a webpage.
+    </p>
+
+    <h3>Example</h3>
+
+    <p>
+        This example page is quite tedious to read, as the html content spans across the entire page:
+    </p>
+    
+    <div class="inline-section">
+        <h4>HTML</h4>
+        <pre>
+            <div class="code">
+                &lt;!DOCTYPE html>
+                &lt;html>
+
+                &lt;head>
+                    &lt;title>Blog #2 - Example 1&lt;/title>
+                    &lt;meta charset="utf-8">
+                &lt;/head>
+                &lt;body>
+
+                &lt;h1 style="text-align: center">Blog #2 - Example 1&lt;/h1>
+                &lt;p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum consequat nisl vel pretium lectus quam id. Sem fringilla ut morbi tincidunt augue. Enim nunc faucibus a pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit amet. Congue eu consequat ac felis donec et odio pellentesque diam. Venenatis cras sed felis eget velit aliquet sagittis id. Dictum fusce ut placerat orci nulla. Quis blandit turpis cursus in hac habitasse. Curabitur gravida arcu ac tortor dignissim.
+                &lt;/p>
+
+                &lt;/body>
+                &lt;/html>
+            </div>
+        </pre>
+    </div>
+    <div class="inline-section">
+        <h4>Rendered</h4>
+        <pre>
+            <div class="code">
+            <img src="../images/blog2_ex1_messy.jpg" alt="Blog #2 Example Messy" style="width:100%">
+            </div>
+        </pre>
+    </div>
+
+    <p>
+        At a very basic level, applying some extra space to the margins and giving the page some padding to the 
+        content lessens the user tracing back and forth across the screen of a webpage, keeping the user focused
+        on the page:
+    </p>
+
+    <div class="inline-section">
+        <h4>HTML</h4>
+        <pre>
+            <div class="code">
+                &lt;!DOCTYPE html>
+                &lt;html>
+
+                &lt;head>
+                    &lt;title>Blog #2 - Example 1&lt;/title>
+                    &lt;!–– Linked stylesheet -->
+                    &lt;link rel="stylesheet" href="style.css">
+                    &lt;meta charset="utf-8">
+                &lt;/head>
+                &lt;body>
+
+                &lt;div class="border">
+                    &lt;div class="content">
+                        &lt;h1 style="text-align: center">Blog #2 - Example 1&lt;/h1>
+                        &lt;p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum consequat nisl vel pretium lectus quam id. Sem fringilla ut morbi tincidunt augue. Enim nunc faucibus a pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit amet. Congue eu consequat ac felis donec et odio pellentesque diam. Venenatis cras sed felis eget velit aliquet sagittis id. Dictum fusce ut placerat orci nulla. Quis blandit turpis cursus in hac habitasse. Curabitur gravida arcu ac tortor dignissim.
+                        &lt;/p>
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;/body>
+                &lt;/html>
+            </div>
+        </pre>
+    </div>
+    <div class="inline-section">
+        <h4>CSS</h4>
+        <pre>
+            <div class="code">
+                /* style.css */
+                body {
+                    background-color:aquamarine;
+                }
+                .border {
+                    background-color:white;
+                    margin-left: 7em;
+                    margin-top: 2em;
+                    margin-right: 7em;
+                }
+                .content {
+                    background-color:white;
+                    padding-top: 0.5em;
+                    padding-bottom: 0.5em;
+                    padding-left: 1.5em;
+                    padding-right: 1.5em;
+                }
+            </div>
+        </pre>
+    </div>
+    <div class="inline-section">
+        <h4>Rendered</h4>
+        <pre>
+            <div class="code">
+            <img src="../images/blog2_ex1_edit.jpg" alt="Blog #2 Example Edited" style="width:100%">
+            </div>
+        </pre>
+    </div>
+
+    <h3>Outside the Visuals of a Webpage</h3>
+
+    <p>
+        While I may be speaking mostly to design in the webpage realm, negative space goes much further than what
+        is placed on a webpage or piece of art. I believe that whitepace is even quite important in the coding
+        aspects of a webpage. This will help with the readability and presentation of code &mdash; which in itself
+        could be claimed as a piece of art!
+    </p>
+
+    <p>Sources (& for more information):</p>
+    <ul>
+        <li><a href="https://www.seguetech.com/whitespace-web-design/">Segue Technologies | Why Whitespace is so Important in Web Design</a></li>
+        <li><a href="https://patrickbrosset.medium.com/when-does-white-space-matter-in-html-b90e8a7cdd33">Patrick Brosset | When does white space matter in HTML?</a></li>
+        <li><a href="https://love2dev.com/blog/html-space/">Love2Dev | HTML and CSS Space to Create Layouts to Increase User Engagement Using line-height, Whitespace and Margin</a></li>
+        <li><a href="https://www.bluecorona.com/blog/benefits-white-space-websites/">Blue Corona | Benefits of White Space on Websites</a></li>
+    </ul>
+
+    <footer>
+    <h3 style="text-align: center"><a href="../index.html">Back</a></h3>
+    </footer>
+
+</body>
+
+</html>

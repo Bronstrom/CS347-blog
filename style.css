@@ -1,0 +1,26 @@
+body {
+    margin-top: 2.5em;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-bottom: 2.5em;
+}
+
+.code {
+    white-space: pre-line;
+    padding: 1em;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    background-color: lightslategray;
+    height: 500px;
+    text-align: left;
+    border-style: groove;
+}
+
+.inline-section {
+    display: inline-block;
+    width: 30%;
+    height: 600px;
+    padding: 1em;
+    background-color: lightgray;
+}
