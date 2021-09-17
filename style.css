@@ -5,16 +5,22 @@ body {
     margin-bottom: 2.5em;
 }
 
+.indent-right {
+    margin-left: 2.5em;
+}
+
 .code {
     white-space: pre-line;
     padding: 1em;
     font-size: 12px;
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
-    background-color: lightslategray;
+    background-color: rgba(119, 136, 153, 0.5);
     height: 500px;
     text-align: left;
     border-style: groove;
+    /* Scrollable box */
+    overflow-y:auto
 }
 
 .inline-section {
