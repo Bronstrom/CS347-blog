@@ -1,0 +1,98 @@
+.blog4-container {
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Set same properties between elements */
+#purple-circle, #green-square, #orange-polygon {
+    height: 150px;
+    width: 150px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 150px;
+    color: white;
+    user-select: none;
+}
+
+#purple-circle {
+    background-color: blueviolet;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+/* When pressed (active) the font & background color will change */
+#purple-circle:active {
+    background-color: yellow;
+    color: royalblue;
+}
+
+
+#green-square {
+    background-color: limegreen;
+    transition: 1.5s ease;
+}
+
+/* When hovered over the shape will scale & rotate */
+#green-square:hover {
+    transform: rotateZ(135deg) scale(1.75);
+}
+
+#orange-polygon {
+    width: 0px;
+    height: 0px;
+    line-height: 25px;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 150px solid coral;
+    animation: unpredictable-shift 3s;
+    animation-iteration-count: infinite;
+}
+
+.polygon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.polygon-container p {
+    padding-top: 10px;
+}
+
+/* Animation for orange-polygon - Is it really that unpredicatable?! */
+@keyframes unpredictable-shift {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    22% {
+        transform: translate(25px, 15px);
+        width: 0px;
+        /* Transform into triangle */
+        line-height: 25px;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+    }
+    41% {
+        transform: translate(-20px, -5px);
+    }
+    64% {
+        transform: translate(10px, 15px);
+        /* Transform into trapezoid */
+        width: 100px;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+    }
+    75% {
+        transform: translate(-5px, -20px);
+    }
+    90% {
+        transform: translate(-15px, 10px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+
