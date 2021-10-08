@@ -1,0 +1,19 @@
+body {
+    background-image: url("week5_kids_background.jpg");
+    background-size: cover;
+    color: rgb(80, 156, 80);
+    font-size: 9px;
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.75);
+    font-weight: bold;
+    width: 5em;
+    height: 5em;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+}
