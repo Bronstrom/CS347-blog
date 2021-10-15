@@ -36,3 +36,37 @@ body {
     margin: auto;
     width: 50%;
   }
+
+object {
+    width: 100%;
+    min-height: 25em;
+}
+
+/* Live Editor Properties */
+.live-editor-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+textarea {
+    width: 32%;
+    min-height: 300px;
+    overflow: scroll;
+    font-family: Courier, sans-serif;
+    font-size: 15px;
+}
+
+iframe {
+    width: 32%;
+}
+
+@media (max-width: 750px) {
+    .live-editor-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    textarea iframe {
+        width: 100%;
+    }
+}

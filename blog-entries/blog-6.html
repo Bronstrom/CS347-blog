@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Brad Fellstrom's Blog | Blog #6</title>
+    <link rel="icon" href="/images/blog_logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="utf-8">
+    <meta name="description" content="Reaching an Audience">
+</head>
+
+<body>
+    <div style="text-align: center">
+        <h1>Week 6 (10/15/21): Live HTML Editor</h1>
+    </div>
+
+    <p>This week we will dive into a tutorial teaching us how to build an embedded
+        live code editor application. We will be building a HTML, CSS & JavaScript-based editor.
+    </p>
+
+    <h2>What's a "live code editor"?</h2>
+
+    <p>I live code editor allows a user to manipulate source code and see the outcome of the code rendering nearly
+        simultaneously on the side. This makes it easy to see prototypes and demos of code fast and convenienetly. 
+    </p>
+    <p>
+        Popular live code editors include <a href="https://codepen.io/">Codepen</a> & <a href="https://jsfiddle.net/">JsFiddle</a>
+    </p>
+
+    <h2>1. Getting Setup</h2>
+
+    <p>Start by creating the following three files (filename suggestions are in parentheses):
+        <ul>
+            <li>A file for writing markdown & containing the backbone of the application (index.html)</li>
+            <li>A file for stylizing the presentation of the application (style.css)</li>
+            <li>A file containing the compilation process and functions of our application (app.css)</li>
+        </ul>
+    </p>
+
+    <h2>2. Initial Page Structure</h3>
+    
+    <p>With markdown, we'll create the general structure of the site.</p>
+
+    <p>To get started with this file (index.html), create a textarea for each of our imbedded editors and, ideally,
+        include ids of each of the languages. To make the compiled code apear we will use an iframe to display
+        our imbedded html document. Create an id for the iframe ("render" as seen below) also, so we can communicate to the Javascript
+        elements of this application.
+    </p>
+    <p>An <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe">iframe</a> is an element of HTML allowing for nested content onto a HTML page. In this case we will be nesting
+        a HTML page (the rendering) into the current HTML page (index.html).
+
+    <div class="inline-section">
+        <h4>HTML</h4>
+        <pre>
+            <div class="code">
+                &lt;!DOCTYPE html>
+                &lt;html>
+                &lt;head>
+                    &lt;title>Live Code Editor&lt;/title>
+                    &lt;meta charset="utf-8">
+                    &lt;link rel="stylesheet" href="../css/style.css" />
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1" />
+                &lt;/head>
+
+                &lt;body>
+                    &lt;div class="live-editor-container">
+                    &lt;textarea id="html" placeholder="HTML">&lt;/textarea>
+                    &lt;textarea id="css" placeholder="CSS">&lt;/textarea>
+                    &lt;textarea id="js" placeholder="JavaScript">&lt;/textarea>
+                    &lt;iframe id="render">&lt;/iframe>
+                    &lt;/div>
+
+                    &lt;script type="text/javascript" src="../js/live-editor-app.js">&lt;/script>
+                &lt;/body>
+                &lt;/html>
+            </div>
+        </pre>
+    </div>
+
+    <h2>3. Polish the Look</h3>
+    
+    <p>Next, we'll spice up the page with some added CSS.</p>
+
+    <p>In this example, the elements are aligned center and spaced evenly apart horizontally. A media query 
+        is included in addition for the container, making the editor windows clearly visable on small screens.
+    </p>
+
+    <div class="inline-section">
+        <h4>CSS</h4>
+        <pre>
+            <div class="code">
+                .live-editor-container {
+                    display: flex;
+                    flex-wrap: nowrap;
+                }
+                
+                textarea {
+                    width: 32%;
+                    min-height: 300px;
+                    overflow: scroll;
+                    font-family: Courier, sans-serif;
+                    font-size: 15px;
+                }
+                
+                iframe {
+                    width: 32%;
+                }
+                
+                @media (max-width: 750px) {
+                    .live-editor-container {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                
+                    textarea iframe {
+                        width: 100%;
+                    }
+                }
+            </div>
+        </pre>
+    </div>
+
+    <h2>4. Add Functionality to the Application</h3>
+    
+    <p>Lastly, we'll add the responsive iframe parts to the application, which can be done in a single function</p>
+
+    <p>We'll begin by aquiring the imbedded editor types ("html", "css", and "js" as seen below) and linking each
+        of them to a variable. Following this, the iframe's id ("render" as seen below) should be linked with it's
+        contentWindow.document, to acquire the iframe's inner HTML document we're creating. When the document body
+        recieves a key up action, we'll want the values of the code to be interpreted by our iframe render. Include
+        this in a small inner function. Before and after code values are written and interpreted, the iframe's
+        contentWindow should be open and closed, respectively. Also, don't forget to call the function!
+    </p>
+
+    <div class="inline-section">
+        <h4>JavaScript</h4>
+        <pre>
+            <div class="code">
+                function compileAndRender() {
+                    var html = document.getElementById("html");
+                    var css = document.getElementById("css");
+                    var js = document.getElementById("js");
+                    var render = document.getElementById("render").contentWindow.document;
+                
+                    document.body.onkeyup = function () {
+                        render.open();
+                        render.writeln(
+                            html.value +
+                            "&lt;style>" +
+                            css.value +
+                            "&lt;/style>" +
+                            "&lt;script>" +
+                            js.value +
+                            "&lt;/script>"
+                        );
+                        render.close();
+                    };
+                }
+                
+                compileAndRender();
+            </div>
+        </pre>
+    </div>
+
+    <h2>5. Stare at Your Completed Work</h3>
+
+    Once the application features are finished, we have a completed live editor!
+
+    <object type="text/html" data="live-editor.html"></object>
+
+    <p>Sources (& for more information):</p>
+    <ul>
+        <li><a href="https://enlight.nyc/projects/code-editor">Enlight | Build a Live Code Editor</a></li>
+        <li><a href="https://reactgo.com/build-your-own-html-editor/">reactgo | How to build your own Html live editor like W3schools</a></li>
+        <li><a href=https://usefulangle.com/post/88/javascript-creating-simple-html-text-editor>Useful Angle | Creating a Simple HTML Editor with Javascript</a></li>
+    </ul>
+
+    <footer>
+        <h2 style="text-align: center"><a href="../index.html">Back</a></h2>
+    </footer>
+
+</body>
+
+</html>
