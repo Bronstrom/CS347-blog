@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Brad Fellstrom's Blog | Blog #7</title>
+    <link rel="icon" href="/images/blog_logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="utf-8">
+    <meta name="description" content="Web Services">
+</head>
+
+<body>
+    <div style="text-align: center">
+        <h1>Week 7 (11/5/21): Web Services</h1>
+        <i>
+            <p>NOTE: The topic I've choosen for this week is less about coding, more of a discussion to someone new
+                to a web service. I wanted to cover this topic now, as it has been covered most recently.</p>
+            <p>Enjoy the stock Creative Commons photos instead of code this week :)</p>
+        </i>
+    </div>
+
+    <p>This week we've dive in and cover the world of web services.</p>
+
+    <img src="../images/cloud-and-database.jpg" alt="Database technology with the cloud"
+    style="float:left; width:33%; padding:2.5em">
+    
+    <h2>Web Services - Are You Speaking a Foriegn Language?</h2>
+
+    <p>Now, I’m sure you’ve at least heard of the name Amazon Web Services (AWS), Microsoft Azure, or Google Cloud
+        Platform (GCP). These are all major web services.</p>
+
+    <p>From a broad perspective, a web service is a software application providing protocols (HTTP/HTTPS) to
+        communicate, share, and exchange data over a network. Most commonly web services are XML-data oriented. A
+        positive of web services, is for the ability of applications to be written in different languages, but still
+        have the ability to communicate and exchange information to other applications through servers and clients. A
+        web service hides implementation details in which it can be used separately in hardware or software contexts
+        through an <i>interface</i>.</p>
+
+    <p>The following features make up a web service:</p>
+    <ul>
+        <li>
+            Accessible over internet/intranet networks
+        </li>
+        <li>
+            Includes a standardized XML messaging system
+        </li>
+        <li>
+            Independent of a OS or programming language
+        </li>
+        <li>
+            Self-describing via standard XML language
+        </li>
+        <li>
+            Found through a simple location
+        </li>
+    </ul>
+
+    <h2>Are There any Varying Calibers of Web Services?</h2>
+
+    <p>There are quite a few out there. I'll name several below:
+
+    <p><b>XML-RPC (Remote Procedure Call)</b> - claimed as the most basic XML protocol to exchange data over a broad
+        scale of devices on a network. XML-RPC uses HTTP to painlessly transfer data and communicate information from
+        client to server.</p>
+
+    <p>
+        <b>UDDI (Universal Description, Discovery, and Integration)</b> - is an XML standard for detailing, publishing,
+        as well as discovering web services. Simply put, It’s an internet registry for businesses around the globe. This
+        standard has the goal in mind to streamline digital transactions/commerce among company systems.
+    </p>
+
+    <p>
+        <b>SOAP</b> - is an XML protocol used to exchange data and documents over HTTP or SMTP (Simple Mail Transfer
+        Protocol). SOAP allows for independent processes operating on differing systems to communicate through XML.
+    </p>
+
+    
+    <img src="../images/web-developer.jpg" alt="Web developer fixing web service"
+        style="float:right; width:33%; padding:2.5em">
+
+    <p>
+        <b>REST</b> - provides communication and connectivity between devices and the internet for API-like tasks.
+        RESTful services typically will use HTTP as the supporting protocol.
+    </p>
+
+    <p>
+        SOAP and REST are some of the most popular choices among developers. There’s been a lot of debate as to which
+        one is the winner over all the competition, although, it seems to be the context for when it’s being used
+        matters most of all. A REST web service is often great for when time is a factor, but SOAP seems to be best when
+        building a service with many, non-CRUD methods. Oftentimes, companies will support both choices, including
+        Amazon and eBay.
+    </p>
+        
+    <h2>Could You Explain the Architecture of Web Services?</h2>
+
+    <p>
+        In order for the framework to function ideally there needs to be some architecture to support it. There are
+        three distinct roles in the architecture of web services which all assist in finding, binding, and publishing
+        the web service:
+    </p>
+
+    <ol>
+        <li>
+            <b>Service Provider</b>: creates the web service and makes it available to the client application to use it for its
+            own specific purposes.
+        </li>
+        <li>
+            <b>Service Requestor</b>: known as the client application that is needed to contact the web service. Popular
+            service requestors include .Net, Java which search for a particular kind of functionality through a web
+            service.
+        </li>
+        <li>
+            <b>Service Broker</b>: the application that gives access to the UDDI (Universal Description, Discovery, and
+            Integration), providing a repository on which various XML notation files for describing the service
+            (including WSDL) may be hosted.
+        </li>
+    </ol>
+
+    <h2>
+        Wait a Sec, I’ve Heard the Term “API” Thrown Around a Bit. Is an API and a Web Service the Same Thing?
+    </h2>
+
+    <p>
+        Kinda, but not exactly. An API or application programming interface offers a service to other pieces of
+        software, forming a connection between computers/programs. Most web services provide an API, which, with its set
+        of commands and functions, is used to retrieve data. An example of this includes Twitter, which delivers an API
+        authorizing a developer to access tweets from a server and then collects data in JSON format.
+    </p>
+
+    <p>Sources (& for more information):</p>
+    <ul>
+        <li><a href="https://www.cleo.com/blog/knowledge-base-web-services">Cleo |
+                What are Web Services?</a></li>
+        <li><a href="https://www.ibm.com/docs/en/cics-ts/5.2?topic=services-what-is-web-service">IBM
+                | What is a Web Service?</a></li>
+        <li><a href="https://www.educba.com/types-of-web-services/">EDUCBA | Types of Web Services
+            </a></li>
+    </ul>
+
+    <footer>
+        <h3 style="text-align: center"><a href="../index.html">Back</a></h3>
+    </footer>
+
+</body>
+
+</html>
