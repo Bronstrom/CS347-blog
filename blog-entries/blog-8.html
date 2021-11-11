@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Brad Fellstrom's Blog | Blog #6</title>
+    <link rel="icon" href="/images/blog_logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="utf-8">
+    <meta name="description" content="Reaching an Audience">
+</head>
+
+<body>
+    <div style="text-align: center">
+        <h1>Week 8 (10/15/21): Tooltips</h1>
+    </div>
+
+    <p>Let's explore a simple but powerful feature to add to a website: tooltips.
+    </p>
+
+
+    <h2>Can you Briefly Describe What a "Tooltip" Is?</h2>
+
+    <p>A tooltip is a short message or box appearing when a user interacts with an element on a page. Tooltips can be
+        found in the form of announcements on pages to guide you where to
+        click/navigigate or even simply the text information that appears when you hover over an icon. The tooltip is a
+        microinteraction or furthermore a dynamic process. This type of process occurs
+        with a trigger, causing an action to happen and provides the user feedback. Tooltips can be used to provide
+        additional information, and help prevent an over crowded screen.
+        They can also be used to give a little extra UX flare.
+    </p>
+
+
+    <h2>Are There any Precausion to Take When Using Tooltips</h2>
+
+    <p>Very much so. There is a fine line between a good tooltip and poor implemented tooltip. Now,
+        we want to use tooltips carefully and avoid them being a nusance. In a way it may seem as if our
+        tooltip is like a nuanced cousin of the weary and obsolete pop-up window. To achieve this point,
+        tooltips should be used in small scale contexts where it is subtle. According to the designer,
+        Marc Schenker, the better tooltips "are so discreet that, sometimes, you’d swear they were never
+        there".
+    </p>
+
+    <p>Tootips can be observed across many popular sites today, including Facebook and Twitter. They are also popularly
+        used in onbarding courses to communicate clear and helpful information. Tooltips on these sites or software
+        don't go overtop it's simple purpose of providing a little more information and potentially boosting the UX
+        design a little. Although they may be observed on many popular sites, they are not needed everwhere. Tooltips
+        should fit a specific purpose. If extra details are not needed, it would probably be best to ditch
+        using a tooltip. The feature of a tooltip also shouldn't be overused to the point where it's tedious for the
+        user to obtrain information by continuously triggering a tooltip to appear.
+    </p>
+
+
+    <h2>I'm Guessing you Have Some Design Tips, Right?</h2>
+
+    <p>You got it. See the following rules below in achieving a great tooltip:</p>
+    <ul>
+        <li><b>Minimalistic Design</b> - use basic colors as well as clear information for the user</li>
+        <li><b>Obvious Cue</b> - make the trigger for the tooltip to appear obvious to the user. Also, avoid making it
+            distracting.</li>
+        <li><b>Sustainable</b> - the tooltip and trigger should be consistently noticable and unobtrusive</li>
+        <li><b>Relevant</b> - supplement information in the right context and don't repeat information what was provided
+            already</li>
+    </ul>
+
+    <h2>Examples</h2>
+
+    <p>HTML has a built in tooltip, although it is very plain and basic. Also it is extremely slow to load. See the
+        example below:</p>
+
+    <div class="inline-section" style="height: 250px;">
+        <h4>HTML</h4>
+        <pre>
+            <div class="code" style="height: 100px;">
+                &lt;h1 title="Kinda bland, right?">HOVER OVER ME&lt;/h1>         
+            </div>
+        </pre>
+    </div>
+
+    <div class="inline-section" style="height: 250px;">
+        <h4>Rendered</h4>
+        <pre>
+            <div class="code" style="height: 100px;">
+                <h1 title="Kinda bland, right?">HOVER OVER ME</h1>
+            </div>
+        </pre>
+    </div>
+
+    <p>Below is a better example using HTML and CSS. This custom tooltip is built by using the positioning of
+        the relative text and creating a colored box for subsequent text to appear in:
+    </p>
+
+    <div class="live-editor-container">
+        <textarea id="html" placeholder="HTML">
+&lt;p>Vel eros donec ac odio. Varius vel pharetra vel turpis. Ante in nibh mauris cursus mattis. Et ligula ullamcorper malesuada proin libero. Ut sem nulla pharetra diam sit. Eget nulla facilisi etiam dignissim diam quis enim. In nibh mauris cursus mattis. Mollis aliquam ut porttitor leo a diam sollicitudin. Orci dapibus ultrices in iaculis nunc sed augue lacus. Sapien faucibus et molestie ac feugiat. Eu consequat ac felis donec. Auctor augue mauris augue neque gravida.&lt;/p>
+&lt;p>Amongst cucumbers and radishes, the
+&lt;span class="tooltipword">
+    romanesco
+    &lt;span class="hovercard">
+        &lt;span class="tooltiptext">
+            A vegetable sporting a spiral-like shape and a vibrant green color.
+        &lt;/span>
+    &lt;/span>
+&lt;/span>
+basks in the bright sunlight. The farmer reaches down and pulls up a hose lying next to his basket full of tomato seeds. The framer than sprays water on the plants lying in his cozy garden tucked away in the valley of the Green Alps mountains.&lt;/p>
+&lt;p>&lt;b>Hover over the green text.&lt;/b>&lt;/p></textarea>
+        <textarea id="css" placeholder="CSS">
+.tooltipword {
+    position: relative;
+    color: limegreen;
+    padding-bottom: 18px;
+    font-size: 1rem;
+}
+
+.hovercard { 
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    left: 50%;
+    top: -75px;
+    transition: 0.5s;
+    transform: translateX(-50%);
+}
+
+.tooltipword:hover .hovercard { 
+    opacity: 1;
+    transition: 0.75s;
+    transition-delay: 0.15s;
+}
+.tooltiptext {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    background-color: green;
+    padding: 15px; 
+    border-radius: 10px; 
+    color: white; 
+    line-height: 15px;
+    transition: 0.75s;
+    width: 200px;
+}</textarea>
+        <!-- No JS Needed -->
+        <div id="js"></div>
+        <iframe id="render"></iframe>
+    </div>
+
+    <script type="text/javascript" src="../js/live-editor-app.js"></script>
+
+
+    <p>Sources (& for more information):</p>
+    <ul>
+        <li><a href="https://www.appcues.com/blog/tooltips">Appcues | Tooltips: How to use this small but mighty UI
+                pattern correctly</a></li>
+        <li><a href="https://www.webdesignerdepot.com/2017/03/how-to-use-tooltips-as-microinteractions/">WebdesignerDepot
+                | How To Use Tooltips As Microinteractions</a></li>
+        <li><a href="https://dev.to/isarisariver/how-to-create-a-custom-tooltip-with-pure-css-4a29">DEV | How to
+                Create a Custom Tooltip with Pure CSS</a>
+    </ul>
+
+    <footer>
+        <h2 style="text-align: center"><a href="../index.html">Back</a></h2>
+    </footer>
+
+</body>
+
+</html>
