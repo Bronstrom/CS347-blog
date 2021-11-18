@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Brad Fellstrom's Blog | Blog #9</title>
+    <link rel="icon" href="/images/blog_logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="utf-8">
+    <meta name="description" content="Dark Mode">
+</head>
+
+<body>
+    <div style="text-align: center">
+        <h1>Week 9 (11/17/21): Dark Mode</h1>
+    </div>
+
+    <p>Today, we'll discuss the popular and trendy dark mode theme for webpages.
+    </p>
+
+    <h2>Can you Give me a Remark on the Mode of the Dark?</h3>
+
+    <p>It might be obvious but in case you don't know, dark mode or dark theme is a mode for
+        viewing content in a mostly dark atmosphere on the UI. Dark mode reduces the amount of
+        light emitted by your viewing screen, while at the same time including
+        enough contrast for content to be viewed well.
+    </p>
+    
+    <p>Generally, dark mode may include a dark
+        background color, like a dark grey, with bright text layered on top. On the opposite
+        end of the spectrum, light mode includes a white background color, with black or dark
+        colored text.
+    </p>
+
+    <h2>What are the perks and losses of Dark Mode?</h3>
+
+    <p>Pros:</p>
+    <ul>
+        <li>Saves energy/power - especially for devices with OLED and AMOLED displays</li>
+        <li>Tends to reduce eye strain in low light conditions</li>
+        <li>A darker screen reduces glare, furthermore, minimizing blue and flickering light</li>
+    </ul>
+
+    <p>Cons:</p>
+    <ul>
+        <li>In some situations, it can inhibit eye strain instead of reducing it - such as in blight
+            conditions where text is difficult to read</li>
+        <li>Light Mode generally has better readability - especially for longer strings of text</li>
+    </ul>
+
+    <h2>How can I Enable a Webpage to be in Dark Mode?</h2>
+
+    <p>Ocassionally you can see a toggle for light and dark mode with a button on a well built webpage. There
+        may be an accessibility control button hidden in the corner, giving the option.
+    </p>
+
+    <p>Although, more often than not, dark mode can be choosen at the operating system level in system 
+        settings/preferences. On many popular browsers, like Firefox and Chrome, they include a browser
+        option to change to a dark theme. Furthermore, on some browsers you can toggle dark and light
+        theme in the developer tools or inspector of a webpage when the webpage has an enabled dark and
+        light theme.
+    </p>
+
+    <h2>Any Ideal Design Choices to Make When Including this Mode?</h2>
+
+    <p>Implementing a dark mode may seem fairly simple, although it's a little more challenging
+        to design one. Here are a couple points to pay attention to when designing a dark mode:
+    </p>
+
+    <h3>Add a Dark Filter for Images</h3>
+    <p>Decreasing the brightness and contrast of images on a page is much better than jarring contrast of 
+        bright images.
+    </p>
+
+    <h3>Find a balanced Style for the Typography</h3>
+    <p>Similar to images, the contrast needs to be balanced. Find a midpoint between too heavy and bold of a
+        font and too thin and condensed of a font that will strain someone's eyes.
+    </p>
+
+    <h3>Make Dark Mode Colors Softer</h3>
+    <p>Pure white text ontop of a pure black can be jarring. An off-white can do the trick here and a dark
+        gray, like #121212 as suggested by the <a href="https://material.io/design/color/dark-theme.html">
+        Materal Design Dark Theme Guidelines</a>.</p>
+
+    <h2>Example</h2>
+
+    <div class="live-editor-container">
+        <textarea id="html" placeholder="HTML">
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Light & Dark Mode Demo</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>Light & Dark Mode Demo</h1>
+        <button id="theme-swap-btn">Light Mode (PRESS ME!)</button>
+        <p>Just some sample text. Hope this hallway isn't too creepy!</p>
+        <img src="../images/hotel_hallway.jpg" style="width: 75%">
+    </body>
+</html>
+        </textarea>
+        <textarea id="css" placeholder="CSS">
+/* style.css */
+
+:root {
+    /* Default white background color with black font color */
+    --bg-color: #fff;
+    --txt-color: #000;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+}
+
+/* Dark theme to be toggled on/off */
+[data-theme="dark"] {
+    --bg-color: #5F5F5F;
+    --txt-color: #7F7;
+}
+
+[data-theme="dark"] img {
+    filter: brightness(.75) contrast(1.5);
+}
+
+[data-theme="dark"] button {
+    color: #E2E2E2;
+    background-color: #999999;
+}
+        </textarea>
+        <textarea id="js" placeholder="JavaScript">
+// Wait for document to load and trigger dark theme
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.documentElement.setAttribute("data-theme", "light");
+
+    // Aquire button to swap
+    var themeBtn = document.getElementById("theme-swap-btn");
+
+    // When button is pressed:
+    themeBtn.onclick = function() {
+        // Get the present theme, which is initially "light"
+        var curTheme = document.documentElement.getAttribute("data-theme");
+
+        // Turnary operator: Swap between `dark` and `light`
+        var swapTheme = curTheme === "dark" ? "light" : "dark"
+        
+        // Set text in button - upper case first letter of swapTheme and add following text
+        document.querySelector('#theme-swap-btn').innerText = swapTheme.charAt(0).toUpperCase() + swapTheme.slice(1); 
+        document.querySelector('#theme-swap-btn').innerText += ' Mode (PRESS ME!)';
+
+        // Set current theme to swapTheme
+        document.documentElement.setAttribute("data-theme", swapTheme);
+    }
+});
+        </textarea>
+        <iframe id="render"></iframe>
+    </div>
+
+    <script type="text/javascript" src="../js/live-editor-app.js"></script>
+
+
+    <p>Sources (& for more information):</p>
+    <ul>
+        <li><a href="https://www.techaheadcorp.com/blog/dark-mode/">TechAhead | Dark Mode – What Is It, and Why Do We Need It?</a>
+        <li><a href="https://www.pullrequest.com/blog/how-to-implement-dark-mode-with-css-js/">PullRequest | How to Implement Dark Mode with CSS and JavaScript</a></li> 
+        <li><a href="https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/">CSS-Tricks | A Complete Guide to Dark Mode on the Web</a></li>   
+    </ul>
+
+    <footer>
+        <h2 style="text-align: center"><a href="../index.html">Back</a></h2>
+    </footer>
+
+</body>
+
+</html>
